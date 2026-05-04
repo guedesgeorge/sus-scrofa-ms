@@ -26,6 +26,7 @@ Fontes dos dados:
 - Plano Nacional de Prevenção, Controle e Monitoramento do Javali
 """
 
+# bibliotecas de importação 
 import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
@@ -175,7 +176,7 @@ LABELS = {
 def criar_pasta_saida():
     """Cria pasta de saída se não existir."""
     os.makedirs(PASTA_SAIDA, exist_ok=True)
-    print(f"📁 Pasta de saída: {os.path.abspath(PASTA_SAIDA)}")
+    print(f" Pasta de saída: {os.path.abspath(PASTA_SAIDA)}")
 
 
 def carregar_dados():
@@ -183,7 +184,7 @@ def carregar_dados():
     df = pd.DataFrame(MUNICIPIOS_JAVALI)
     geometry = [Point(row["lon"], row["lat"]) for _, row in df.iterrows()]
     gdf = gpd.GeoDataFrame(df, geometry=geometry, crs="EPSG:4326")
-    print(f"✅ {len(gdf)} municípios carregados")
+    print(f" {len(gdf)} municípios carregados")
     return df, gdf
 
 
@@ -197,12 +198,12 @@ def carregar_malha_ms():
 
     try:
         import geobr
-        print("⏳ Baixando malha municipal do MS via geobr...")
+        print(" Baixando malha municipal do MS via geobr...")
         ms = geobr.read_municipality(code_muni=50, year=2020)
-        print(f"✅ Malha municipal carregada: {len(ms)} municípios")
+        print(f" Malha municipal carregada: {len(ms)} municípios")
         return ms
     except Exception as e:
-        print(f"⚠️  Não foi possível baixar a malha via geobr: {e}")
+        print(f"  Não foi possível baixar a malha via geobr: {e}")
         print("   O mapa será gerado sem os contornos municipais.")
         print("   Para instalar: pip install geobr")
         return None
@@ -217,10 +218,10 @@ def imprimir_resumo(df):
     for nivel in [5, 4, 3, 2, 1]:
         subset = df[df["nivel"] == nivel]
         muns = ", ".join(subset["municipio"].tolist())
-        print(f"\n  🔴 {LABELS[nivel]} (nível {nivel}) — {len(subset)} municípios:")
+        print(f"\n   {LABELS[nivel]} (nível {nivel}) — {len(subset)} municípios:")
         print(f"     {muns}")
 
-    print(f"\n  📊 Total: {len(df)} municípios mapeados")
+    print(f"\n   Total: {len(df)} municípios mapeados")
     print("=" * 65)
 
 
@@ -337,7 +338,7 @@ def gerar_mapa_calor(gdf, malha_ms=None):
     if SALVAR_PNG:
         caminho = os.path.join(PASTA_SAIDA, "mapa_calor_javali_ms.png")
         plt.savefig(caminho, dpi=DPI_SAIDA, bbox_inches="tight")
-        print(f"💾 Mapa salvo: {caminho}")
+        print(f" Mapa salvo: {caminho}")
 
     return fig
 
@@ -380,7 +381,7 @@ def gerar_grafico_barras(df):
     if SALVAR_PNG:
         caminho = os.path.join(PASTA_SAIDA, "grafico_municipios_javali_ms.png")
         plt.savefig(caminho, dpi=DPI_SAIDA, bbox_inches="tight")
-        print(f"💾 Gráfico salvo: {caminho}")
+        print(f" Gráfico salvo: {caminho}")
 
     return fig
 
@@ -502,7 +503,7 @@ def gerar_mapa_concentracao(gdf, malha_ms=None):
         caminho = os.path.join(PASTA_SAIDA, "mapa_kde_javali_ms.png")
         plt.savefig(caminho, dpi=DPI_SAIDA, bbox_inches="tight",
                     facecolor=fig.get_facecolor())
-        print(f"💾 Mapa KDE salvo: {caminho}")
+        print(f" Mapa KDE salvo: {caminho}")
 
     return fig
 
@@ -519,14 +520,14 @@ def salvar_csv(df):
     })
     caminho = os.path.join(PASTA_SAIDA, "municipios_javali_ms.csv")
     df_export.to_csv(caminho, index=False, encoding="utf-8-sig")
-    print(f"💾 CSV salvo: {caminho}")
+    print(f" CSV salvo: {caminho}")
 
 
 # ============================================================
 # EXECUÇÃO PRINCIPAL
 # ============================================================
 def main():
-    print("\n🐗 ANÁLISE DE OCORRÊNCIA DE JAVALI — MATO GROSSO DO SUL")
+    print("\n ANÁLISE DE OCORRÊNCIA DE JAVALI — MATO GROSSO DO SUL")
     print("=" * 60)
 
     criar_pasta_saida()
@@ -534,8 +535,7 @@ def main():
     malha_ms = carregar_malha_ms()
     imprimir_resumo(df)
 
-    print("\n⏳ Gerando visualizações...")
-
+    print("\n Gerando visualizações...")
     # Mapa de calor com buffers
     gerar_mapa_calor(gdf, malha_ms)
 
@@ -546,17 +546,17 @@ def main():
     try:
         gerar_mapa_concentracao(gdf, malha_ms)
     except ImportError:
-        print("⚠️  scipy não instalado — pulando mapa KDE")
+        print("  scipy não instalado — pulando mapa KDE")
         print("   Para instalar: pip install scipy")
 
     # CSV
     if SALVAR_CSV:
         salvar_csv(df)
 
-    print(f"\n✅ Tudo pronto! Arquivos em: {os.path.abspath(PASTA_SAIDA)}/")
+    print(f"\n Tudo pronto! Arquivos em: {os.path.abspath(PASTA_SAIDA)}/")
 
     if MOSTRAR_GRAFICOS:
-        print("\n📊 Exibindo gráficos... (feche as janelas para encerrar)")
+        print("\n Exibindo gráficos... (feche as janelas para encerrar)")
         plt.show()
 
 
