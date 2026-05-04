@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5bad8dcb7a76e03c071477dcde817faa {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+    <div style="
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        z-index: 1000;
+        background: white;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+        line-height: 1.8;
+    ">
+        <b style="font-size: 14px;">🐗 Ocorrência de Javali — MS</b><br>
+        <hr style="margin: 5px 0;">
+        <span style="color: #e74c3c;">⬤</span> Extremamente Alta (4 mun.)<br>
+        <span style="color: #e67e22;">⬤</span> Alta (6 mun.)<br>
+        <span style="color: #f1c40f;">⬤</span> Frequente (12 mun.)<br>
+        <span style="color: #2ecc71;">⬤</span> Confirmada (16 mun.)<br>
+        <span style="color: #3498db;">⬤</span> Esporádica (4 mun.)<br>
+        <hr style="margin: 5px 0;">
+        <span style="font-size: 10px; color: #999;">
+            Total: 42 municípios · Fontes: IBAMA, Embrapa, UFMS
+        </span>
+    </div>
+    
+    
+    <div style="
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        background: rgba(255,255,255,0.95);
+        padding: 10px 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        font-family: Arial, sans-serif;
+        text-align: center;
+    ">
+        <b style="font-size: 16px;">🐗 Mapa de Ocorrência de Javali (Sus scrofa)</b><br>
+        <span style="font-size: 12px; color: #666;">
+            Mato Grosso do Sul — Projeto de Pesquisa
+        </span>
+    </div>
+    
+    
+            <div class="folium-map" id="map_5bad8dcb7a76e03c071477dcde817faa" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5bad8dcb7a76e03c071477dcde817faa = L.map(
+                "map_5bad8dcb7a76e03c071477dcde817faa",
+                {
+                    center: [-21.5, -54.8],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_5bad8dcb7a76e03c071477dcde817faa);
+
+            
+
+        
+    
+            var tile_layer_c254d3fc3f1e8f9c28cd4ad47d2eeec9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c254d3fc3f1e8f9c28cd4ad47d2eeec9.addTo(map_5bad8dcb7a76e03c071477dcde817faa);
+        
+    
+            var tile_layer_bcc24d812d499d9c88b32ba33897937e = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_bcc24d812d499d9c88b32ba33897937e.addTo(map_5bad8dcb7a76e03c071477dcde817faa);
+        
+    
+            var tile_layer_16cfa6ba220e4282f259a9fcd75df018 = L.tileLayer(
+                "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "OpenTopoMap",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_16cfa6ba220e4282f259a9fcd75df018.addTo(map_5bad8dcb7a76e03c071477dcde817faa);
+        
+    
+            var feature_group_7ff133f1142975d69450f206f2771ee5 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_025b9f444df7bb6230e76f10eea110fb = L.circleMarker(
+                [-20.4697, -54.6201],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(feature_group_7ff133f1142975d69450f206f2771ee5);
+        
+    
+        var popup_22a0691e744c3f78db80af8d908c0157 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_53ecb68bb3125a2e12cee78215d85b60 = $(`<div id="html_53ecb68bb3125a2e12cee78215d85b60" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Campo Grande             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🔵 Esporádica (1/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-20.4697</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.6201</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Relatos periurbanos             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_22a0691e744c3f78db80af8d908c0157.setContent(html_53ecb68bb3125a2e12cee78215d85b60);
+            
+        
+
+        circle_marker_025b9f444df7bb6230e76f10eea110fb.bindPopup(popup_22a0691e744c3f78db80af8d908c0157)
+        ;
+
+        
+    
+    
+            circle_marker_025b9f444df7bb6230e76f10eea110fb.bindTooltip(
+                `<div>
+                     Campo Grande — Nível 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_003ae95a4a30d5e30b75b69497329daf = L.circleMarker(
+                [-20.7511, -51.6783],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(feature_group_7ff133f1142975d69450f206f2771ee5);
+        
+    
+        var popup_d222d230d80c72d689e44ebebdc3cb2c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ddfa222803fdca445aca4b74a2678277 = $(`<div id="html_ddfa222803fdca445aca4b74a2678277" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Três Lagoas             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🔵 Esporádica (1/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-20.7511</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-51.6783</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Relatos esporádicos             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_d222d230d80c72d689e44ebebdc3cb2c.setContent(html_ddfa222803fdca445aca4b74a2678277);
+            
+        
+
+        circle_marker_003ae95a4a30d5e30b75b69497329daf.bindPopup(popup_d222d230d80c72d689e44ebebdc3cb2c)
+        ;
+
+        
+    
+    
+            circle_marker_003ae95a4a30d5e30b75b69497329daf.bindTooltip(
+                `<div>
+                     Três Lagoas — Nível 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_37b0ff4002aa8b2e1ce19b45306cf202 = L.circleMarker(
+                [-23.9356, -54.2808],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(feature_group_7ff133f1142975d69450f206f2771ee5);
+        
+    
+        var popup_5bed48738cd9175a2d4d535e9886430f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_493c270fcab49ab4370468bc013efb66 = $(`<div id="html_493c270fcab49ab4370468bc013efb66" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Mundo Novo             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🔵 Esporádica (1/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-23.9356</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.2808</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Relatos esporádicos             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_5bed48738cd9175a2d4d535e9886430f.setContent(html_493c270fcab49ab4370468bc013efb66);
+            
+        
+
+        circle_marker_37b0ff4002aa8b2e1ce19b45306cf202.bindPopup(popup_5bed48738cd9175a2d4d535e9886430f)
+        ;
+
+        
+    
+    
+            circle_marker_37b0ff4002aa8b2e1ce19b45306cf202.bindTooltip(
+                `<div>
+                     Mundo Novo — Nível 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6f08b39798a7b94b6d78925cfa03ba70 = L.circleMarker(
+                [-23.7867, -54.2836],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498db", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 1}
+            ).addTo(feature_group_7ff133f1142975d69450f206f2771ee5);
+        
+    
+        var popup_a7e5187485c900b6096d3a1017c70333 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b884dfaa15372d506e342e43da227e50 = $(`<div id="html_b884dfaa15372d506e342e43da227e50" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Eldorado             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🔵 Esporádica (1/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-23.7867</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.2836</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Relatos esporádicos             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_a7e5187485c900b6096d3a1017c70333.setContent(html_b884dfaa15372d506e342e43da227e50);
+            
+        
+
+        circle_marker_6f08b39798a7b94b6d78925cfa03ba70.bindPopup(popup_a7e5187485c900b6096d3a1017c70333)
+        ;
+
+        
+    
+    
+            circle_marker_6f08b39798a7b94b6d78925cfa03ba70.bindTooltip(
+                `<div>
+                     Eldorado — Nível 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_7ff133f1142975d69450f206f2771ee5.addTo(map_5bad8dcb7a76e03c071477dcde817faa);
+        
+    
+            var feature_group_a55526745535e4e83919c243858e3f5d = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_1605f13c8a895c792b73f0e13175c37a = L.circleMarker(
+                [-22.1531, -53.7711],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_c061737db628c4f0c78d586bbf1ecd42 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_586c4257eea45b7e0b6d71d650b70f9f = $(`<div id="html_586c4257eea45b7e0b6d71d650b70f9f" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Angélica             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.1531</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-53.7711</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_c061737db628c4f0c78d586bbf1ecd42.setContent(html_586c4257eea45b7e0b6d71d650b70f9f);
+            
+        
+
+        circle_marker_1605f13c8a895c792b73f0e13175c37a.bindPopup(popup_c061737db628c4f0c78d586bbf1ecd42)
+        ;
+
+        
+    
+    
+            circle_marker_1605f13c8a895c792b73f0e13175c37a.bindTooltip(
+                `<div>
+                     Angélica — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_49e365f04d735eab5f1c0139da5a3444 = L.circleMarker(
+                [-22.1856, -52.7189],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_183c2615bae94ee07d96e4b6b0561a7d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9ce20936cbd0fc549aafc2e3d09f53b6 = $(`<div id="html_9ce20936cbd0fc549aafc2e3d09f53b6" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Anaurilândia             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.1856</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-52.7189</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_183c2615bae94ee07d96e4b6b0561a7d.setContent(html_9ce20936cbd0fc549aafc2e3d09f53b6);
+            
+        
+
+        circle_marker_49e365f04d735eab5f1c0139da5a3444.bindPopup(popup_183c2615bae94ee07d96e4b6b0561a7d)
+        ;
+
+        
+    
+    
+            circle_marker_49e365f04d735eab5f1c0139da5a3444.bindTooltip(
+                `<div>
+                     Anaurilândia — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dc796bc26618b0bdebdeba70c8463802 = L.circleMarker(
+                [-20.4714, -55.7867],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_6ccdcdb493f1874e832aad44def9899b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4caddbb4ea2ff67fb9ca35854c0792bb = $(`<div id="html_4caddbb4ea2ff67fb9ca35854c0792bb" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Aquidauana             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-20.4714</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-55.7867</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_6ccdcdb493f1874e832aad44def9899b.setContent(html_4caddbb4ea2ff67fb9ca35854c0792bb);
+            
+        
+
+        circle_marker_dc796bc26618b0bdebdeba70c8463802.bindPopup(popup_6ccdcdb493f1874e832aad44def9899b)
+        ;
+
+        
+    
+    
+            circle_marker_dc796bc26618b0bdebdeba70c8463802.bindTooltip(
+                `<div>
+                     Aquidauana — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f148a15fce81d4ced95954e2a67984bb = L.circleMarker(
+                [-22.2944, -53.2706],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_d56f01d06874707a3dc321ce8767684f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_accef89f9c9fb224c6a47507dc43adc9 = $(`<div id="html_accef89f9c9fb224c6a47507dc43adc9" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Bataiporã             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.2944</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-53.2706</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_d56f01d06874707a3dc321ce8767684f.setContent(html_accef89f9c9fb224c6a47507dc43adc9);
+            
+        
+
+        circle_marker_f148a15fce81d4ced95954e2a67984bb.bindPopup(popup_d56f01d06874707a3dc321ce8767684f)
+        ;
+
+        
+    
+    
+            circle_marker_f148a15fce81d4ced95954e2a67984bb.bindTooltip(
+                `<div>
+                     Bataiporã — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_73fbcd0f749edd258658def5c4c21e91 = L.circleMarker(
+                [-20.5381, -56.7147],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_996d7ee8f3f2ecb4a897895599f2fad7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_95261738e9946b18bafe0f53b39302f9 = $(`<div id="html_95261738e9946b18bafe0f53b39302f9" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Bodoquena             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-20.5381</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-56.7147</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_996d7ee8f3f2ecb4a897895599f2fad7.setContent(html_95261738e9946b18bafe0f53b39302f9);
+            
+        
+
+        circle_marker_73fbcd0f749edd258658def5c4c21e91.bindPopup(popup_996d7ee8f3f2ecb4a897895599f2fad7)
+        ;
+
+        
+    
+    
+            circle_marker_73fbcd0f749edd258658def5c4c21e91.bindTooltip(
+                `<div>
+                     Bodoquena — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c0a652a9ba43902f2b4f474925f23c7e = L.circleMarker(
+                [-22.0111, -57.0272],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_7f13538239e7b04c5b094c72b0ea0b85 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_015d9ccd829658d3a8883560a00f0bea = $(`<div id="html_015d9ccd829658d3a8883560a00f0bea" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Caracol             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.0111</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-57.0272</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_7f13538239e7b04c5b094c72b0ea0b85.setContent(html_015d9ccd829658d3a8883560a00f0bea);
+            
+        
+
+        circle_marker_c0a652a9ba43902f2b4f474925f23c7e.bindPopup(popup_7f13538239e7b04c5b094c72b0ea0b85)
+        ;
+
+        
+    
+    
+            circle_marker_c0a652a9ba43902f2b4f474925f23c7e.bindTooltip(
+                `<div>
+                     Caracol — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb3348b258c24a7a56617ead021309dd = L.circleMarker(
+                [-19.0092, -57.6514],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_11f9c31de1c8b83f32e015462b1823dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e98fb813d19ef3d8b9fd1bed4291ae36 = $(`<div id="html_e98fb813d19ef3d8b9fd1bed4291ae36" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Corumbá             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-19.0092</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-57.6514</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Pantanal — porco monteiro (Sus scrofa feral)             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_11f9c31de1c8b83f32e015462b1823dd.setContent(html_e98fb813d19ef3d8b9fd1bed4291ae36);
+            
+        
+
+        circle_marker_cb3348b258c24a7a56617ead021309dd.bindPopup(popup_11f9c31de1c8b83f32e015462b1823dd)
+        ;
+
+        
+    
+    
+            circle_marker_cb3348b258c24a7a56617ead021309dd.bindTooltip(
+                `<div>
+                     Corumbá — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_46e3cc759bc311cca40e13670af5f9f7 = L.circleMarker(
+                [-18.5069, -54.76],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_9ca49d7d16abc325ca094b2a38f074c0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2221b20d06bc27049fd8ae701c50e825 = $(`<div id="html_2221b20d06bc27049fd8ae701c50e825" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Coxim             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-18.5069</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.7600</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_9ca49d7d16abc325ca094b2a38f074c0.setContent(html_2221b20d06bc27049fd8ae701c50e825);
+            
+        
+
+        circle_marker_46e3cc759bc311cca40e13670af5f9f7.bindPopup(popup_9ca49d7d16abc325ca094b2a38f074c0)
+        ;
+
+        
+    
+    
+            circle_marker_46e3cc759bc311cca40e13670af5f9f7.bindTooltip(
+                `<div>
+                     Coxim — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a5e2c7e6d031f99673f1874c921b346c = L.circleMarker(
+                [-22.2767, -54.1681],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_ce9e448c75d69d27dec5fb906e65f297 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6b45974f5573683fc556a1f5e8454eaf = $(`<div id="html_6b45974f5573683fc556a1f5e8454eaf" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Deodápolis             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.2767</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.1681</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_ce9e448c75d69d27dec5fb906e65f297.setContent(html_6b45974f5573683fc556a1f5e8454eaf);
+            
+        
+
+        circle_marker_a5e2c7e6d031f99673f1874c921b346c.bindPopup(popup_ce9e448c75d69d27dec5fb906e65f297)
+        ;
+
+        
+    
+    
+            circle_marker_a5e2c7e6d031f99673f1874c921b346c.bindTooltip(
+                `<div>
+                     Deodápolis — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2c3cd95c214d036c724cdc4544ea8eac = L.circleMarker(
+                [-22.4133, -54.2328],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_1693512fb2e963d6c67bf045cf0f9d16 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d7aad3a346c48d82cf2f35a49a89b78 = $(`<div id="html_6d7aad3a346c48d82cf2f35a49a89b78" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Glória de Dourados             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.4133</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.2328</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_1693512fb2e963d6c67bf045cf0f9d16.setContent(html_6d7aad3a346c48d82cf2f35a49a89b78);
+            
+        
+
+        circle_marker_2c3cd95c214d036c724cdc4544ea8eac.bindPopup(popup_1693512fb2e963d6c67bf045cf0f9d16)
+        ;
+
+        
+    
+    
+            circle_marker_2c3cd95c214d036c724cdc4544ea8eac.bindTooltip(
+                `<div>
+                     Glória de Dourados — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9e9cb7daa1fced86bf478ba7b8f40e17 = L.circleMarker(
+                [-21.4583, -56.1117],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_fad21a8d3c038f557dd3c06d235540e1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_337f1325cf614afd4430d49b9d938477 = $(`<div id="html_337f1325cf614afd4430d49b9d938477" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Guia Lopes da Laguna             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-21.4583</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-56.1117</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_fad21a8d3c038f557dd3c06d235540e1.setContent(html_337f1325cf614afd4430d49b9d938477);
+            
+        
+
+        circle_marker_9e9cb7daa1fced86bf478ba7b8f40e17.bindPopup(popup_fad21a8d3c038f557dd3c06d235540e1)
+        ;
+
+        
+    
+    
+            circle_marker_9e9cb7daa1fced86bf478ba7b8f40e17.bindTooltip(
+                `<div>
+                     Guia Lopes da Laguna — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_15991f979692486374544300753e1e0b = L.circleMarker(
+                [-23.4767, -54.1875],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_a2d8ee8b3e60be07ea1265ed1494bcae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b82078c524444c96f727292dfabcd859 = $(`<div id="html_b82078c524444c96f727292dfabcd859" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Itaquiraí             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-23.4767</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.1875</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_a2d8ee8b3e60be07ea1265ed1494bcae.setContent(html_b82078c524444c96f727292dfabcd859);
+            
+        
+
+        circle_marker_15991f979692486374544300753e1e0b.bindPopup(popup_a2d8ee8b3e60be07ea1265ed1494bcae)
+        ;
+
+        
+    
+    
+            circle_marker_15991f979692486374544300753e1e0b.bindTooltip(
+                `<div>
+                     Itaquiraí — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5642e03ce5b4ed35b2cce20fae1c79f6 = L.circleMarker(
+                [-22.4803, -54.3078],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_f750eb36009b2be78ea5d16d6ac5e4a3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d6197a1e8da815df8bb54e38dc75cfe8 = $(`<div id="html_d6197a1e8da815df8bb54e38dc75cfe8" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Jateí             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.4803</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.3078</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_f750eb36009b2be78ea5d16d6ac5e4a3.setContent(html_d6197a1e8da815df8bb54e38dc75cfe8);
+            
+        
+
+        circle_marker_5642e03ce5b4ed35b2cce20fae1c79f6.bindPopup(popup_f750eb36009b2be78ea5d16d6ac5e4a3)
+        ;
+
+        
+    
+    
+            circle_marker_5642e03ce5b4ed35b2cce20fae1c79f6.bindTooltip(
+                `<div>
+                     Jateí — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c2038015442a2ef74213281b9b557dd1 = L.circleMarker(
+                [-22.86, -54.6064],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_a557e6df90cf5f3aeb52d1a9a3cfd67f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b10479534d2194547f098dc15c161b0a = $(`<div id="html_b10479534d2194547f098dc15c161b0a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Juti             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.8600</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.6064</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_a557e6df90cf5f3aeb52d1a9a3cfd67f.setContent(html_b10479534d2194547f098dc15c161b0a);
+            
+        
+
+        circle_marker_c2038015442a2ef74213281b9b557dd1.bindPopup(popup_a557e6df90cf5f3aeb52d1a9a3cfd67f)
+        ;
+
+        
+    
+    
+            circle_marker_c2038015442a2ef74213281b9b557dd1.bindTooltip(
+                `<div>
+                     Juti — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f430fec2227ca609b2627a7e53883311 = L.circleMarker(
+                [-20.2406, -56.3778],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_cb082f814803011142ff6ee0c8575dae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bb2b3debb696adff73fc90f2115a6776 = $(`<div id="html_bb2b3debb696adff73fc90f2115a6776" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Miranda             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-20.2406</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-56.3778</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_cb082f814803011142ff6ee0c8575dae.setContent(html_bb2b3debb696adff73fc90f2115a6776);
+            
+        
+
+        circle_marker_f430fec2227ca609b2627a7e53883311.bindPopup(popup_cb082f814803011142ff6ee0c8575dae)
+        ;
+
+        
+    
+    
+            circle_marker_f430fec2227ca609b2627a7e53883311.bindTooltip(
+                `<div>
+                     Miranda — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af9c3107904b549620b4d550f8c97e34 = L.circleMarker(
+                [-22.2328, -53.3433],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(feature_group_a55526745535e4e83919c243858e3f5d);
+        
+    
+        var popup_6bc552c281780a1e8d09e3c7607f6ae7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9cf999b009941ffef575ae8798b31ad1 = $(`<div id="html_9cf999b009941ffef575ae8798b31ad1" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Nova Andradina             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟢 Confirmada (2/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.2328</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-53.3433</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_6bc552c281780a1e8d09e3c7607f6ae7.setContent(html_9cf999b009941ffef575ae8798b31ad1);
+            
+        
+
+        circle_marker_af9c3107904b549620b4d550f8c97e34.bindPopup(popup_6bc552c281780a1e8d09e3c7607f6ae7)
+        ;
+
+        
+    
+    
+            circle_marker_af9c3107904b549620b4d550f8c97e34.bindTooltip(
+                `<div>
+                     Nova Andradina — Nível 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_a55526745535e4e83919c243858e3f5d.addTo(map_5bad8dcb7a76e03c071477dcde817faa);
+        
+    
+            var feature_group_b5f7361fc5ed4f70932b41d673cf99e1 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_cb16b498149365bd6531d652c8fc03f2 = L.circleMarker(
+                [-22.1069, -56.5214],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1c40f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b5f7361fc5ed4f70932b41d673cf99e1);
+        
+    
+        var popup_bcf4317142e46b79cae4c22b2d7b57e3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c398cd68f8816e0f01e9b17e8d500b3a = $(`<div id="html_c398cd68f8816e0f01e9b17e8d500b3a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Bela Vista             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟡 Frequente (3/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.1069</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-56.5214</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Região Sul — cruzamento com porcos domésticos (javaporcos)             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_bcf4317142e46b79cae4c22b2d7b57e3.setContent(html_c398cd68f8816e0f01e9b17e8d500b3a);
+            
+        
+
+        circle_marker_cb16b498149365bd6531d652c8fc03f2.bindPopup(popup_bcf4317142e46b79cae4c22b2d7b57e3)
+        ;
+
+        
+    
+    
+            circle_marker_cb16b498149365bd6531d652c8fc03f2.bindTooltip(
+                `<div>
+                     Bela Vista — Nível 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_75a08237481ccc51e352ce8d4d546806 = L.circleMarker(
+                [-22.9367, -55.6383],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1c40f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b5f7361fc5ed4f70932b41d673cf99e1);
+        
+    
+        var popup_830c5d0ec5b67322c6bdad9c51c930d8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8c34e8b38b7f0ec02325d9d24197439f = $(`<div id="html_8c34e8b38b7f0ec02325d9d24197439f" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Aral Moreira             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟡 Frequente (3/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.9367</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-55.6383</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Fronteira com Paraguai             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_830c5d0ec5b67322c6bdad9c51c930d8.setContent(html_8c34e8b38b7f0ec02325d9d24197439f);
+            
+        
+
+        circle_marker_75a08237481ccc51e352ce8d4d546806.bindPopup(popup_830c5d0ec5b67322c6bdad9c51c930d8)
+        ;
+
+        
+    
+    
+            circle_marker_75a08237481ccc51e352ce8d4d546806.bindTooltip(
+                `<div>
+                     Aral Moreira — Nível 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2b25de34617b63739cc9e1f6d6e44791 = L.circleMarker(
+                [-23.105, -55.2256],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1c40f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b5f7361fc5ed4f70932b41d673cf99e1);
+        
+    
+        var popup_b24c60b6ea8f23cadd1be3bcb23bf9f7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0854c093be40b22125107e90761b0ace = $(`<div id="html_0854c093be40b22125107e90761b0ace" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Amambai             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟡 Frequente (3/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-23.1050</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-55.2256</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_b24c60b6ea8f23cadd1be3bcb23bf9f7.setContent(html_0854c093be40b22125107e90761b0ace);
+            
+        
+
+        circle_marker_2b25de34617b63739cc9e1f6d6e44791.bindPopup(popup_b24c60b6ea8f23cadd1be3bcb23bf9f7)
+        ;
+
+        
+    
+    
+            circle_marker_2b25de34617b63739cc9e1f6d6e44791.bindTooltip(
+                `<div>
+                     Amambai — Nível 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0a86a85a436af1f1eab5e86818ee8395 = L.circleMarker(
+                [-22.1914, -55.9531],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1c40f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b5f7361fc5ed4f70932b41d673cf99e1);
+        
+    
+        var popup_97884cd7781383cf41cb099fb42c9ba0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0c5cbc1c4fc70c7f4860c3d28bf6e5e2 = $(`<div id="html_0c5cbc1c4fc70c7f4860c3d28bf6e5e2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Antônio João             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟡 Frequente (3/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.1914</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-55.9531</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Fronteira — rota de entrada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_97884cd7781383cf41cb099fb42c9ba0.setContent(html_0c5cbc1c4fc70c7f4860c3d28bf6e5e2);
+            
+        
+
+        circle_marker_0a86a85a436af1f1eab5e86818ee8395.bindPopup(popup_97884cd7781383cf41cb099fb42c9ba0)
+        ;
+
+        
+    
+    
+            circle_marker_0a86a85a436af1f1eab5e86818ee8395.bindTooltip(
+                `<div>
+                     Antônio João — Nível 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9531219d2ad4b4d65e9086e81cf2db61 = L.circleMarker(
+                [-23.0631, -54.1908],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1c40f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b5f7361fc5ed4f70932b41d673cf99e1);
+        
+    
+        var popup_3400c05bfd096d95eabd8c33cffa35f8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_73eea286f2b62ae786b2df457a56a6cc = $(`<div id="html_73eea286f2b62ae786b2df457a56a6cc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Naviraí             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟡 Frequente (3/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-23.0631</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.1908</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_3400c05bfd096d95eabd8c33cffa35f8.setContent(html_73eea286f2b62ae786b2df457a56a6cc);
+            
+        
+
+        circle_marker_9531219d2ad4b4d65e9086e81cf2db61.bindPopup(popup_3400c05bfd096d95eabd8c33cffa35f8)
+        ;
+
+        
+    
+    
+            circle_marker_9531219d2ad4b4d65e9086e81cf2db61.bindTooltip(
+                `<div>
+                     Naviraí — Nível 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c9587209ce86f3a99236d045b9ccc855 = L.circleMarker(
+                [-22.3089, -53.8167],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1c40f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b5f7361fc5ed4f70932b41d673cf99e1);
+        
+    
+        var popup_d3bd3fcb6d0fd2a9f59bef770261cd71 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d39f6f14d66e437fccee54f01f32f4f5 = $(`<div id="html_d39f6f14d66e437fccee54f01f32f4f5" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Ivinhema             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟡 Frequente (3/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.3089</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-53.8167</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_d3bd3fcb6d0fd2a9f59bef770261cd71.setContent(html_d39f6f14d66e437fccee54f01f32f4f5);
+            
+        
+
+        circle_marker_c9587209ce86f3a99236d045b9ccc855.bindPopup(popup_d3bd3fcb6d0fd2a9f59bef770261cd71)
+        ;
+
+        
+    
+    
+            circle_marker_c9587209ce86f3a99236d045b9ccc855.bindTooltip(
+                `<div>
+                     Ivinhema — Nível 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2746c86b8816051ba8816f4294e71603 = L.circleMarker(
+                [-21.1267, -56.4836],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1c40f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b5f7361fc5ed4f70932b41d673cf99e1);
+        
+    
+        var popup_74d9a8d946f1d5c6c291e7212d8d5c9c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7141fb4cc53bd8b6a55a755ec95f5109 = $(`<div id="html_7141fb4cc53bd8b6a55a755ec95f5109" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Bonito             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟡 Frequente (3/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-21.1267</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-56.4836</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Área turística afetada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_74d9a8d946f1d5c6c291e7212d8d5c9c.setContent(html_7141fb4cc53bd8b6a55a755ec95f5109);
+            
+        
+
+        circle_marker_2746c86b8816051ba8816f4294e71603.bindPopup(popup_74d9a8d946f1d5c6c291e7212d8d5c9c)
+        ;
+
+        
+    
+    
+            circle_marker_2746c86b8816051ba8816f4294e71603.bindTooltip(
+                `<div>
+                     Bonito — Nível 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_178a43fd534bea99e33f3b78f395185f = L.circleMarker(
+                [-23.2722, -55.5264],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1c40f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b5f7361fc5ed4f70932b41d673cf99e1);
+        
+    
+        var popup_848fa80b091ced72004287f213ed2360 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1947543cf4ea577a788c7b709df204c6 = $(`<div id="html_1947543cf4ea577a788c7b709df204c6" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Coronel Sapucaia             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟡 Frequente (3/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-23.2722</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-55.5264</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Fronteira             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_848fa80b091ced72004287f213ed2360.setContent(html_1947543cf4ea577a788c7b709df204c6);
+            
+        
+
+        circle_marker_178a43fd534bea99e33f3b78f395185f.bindPopup(popup_848fa80b091ced72004287f213ed2360)
+        ;
+
+        
+    
+    
+            circle_marker_178a43fd534bea99e33f3b78f395185f.bindTooltip(
+                `<div>
+                     Coronel Sapucaia — Nível 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a6cf3b4e44993664eed775457af02e44 = L.circleMarker(
+                [-21.4797, -56.1383],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1c40f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b5f7361fc5ed4f70932b41d673cf99e1);
+        
+    
+        var popup_b2c77e08730c29ba1135b621032d58d3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f61a2a3dbd330c80d695cfb984180505 = $(`<div id="html_f61a2a3dbd330c80d695cfb984180505" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Jardim             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟡 Frequente (3/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-21.4797</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-56.1383</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_b2c77e08730c29ba1135b621032d58d3.setContent(html_f61a2a3dbd330c80d695cfb984180505);
+            
+        
+
+        circle_marker_a6cf3b4e44993664eed775457af02e44.bindPopup(popup_b2c77e08730c29ba1135b621032d58d3)
+        ;
+
+        
+    
+    
+            circle_marker_a6cf3b4e44993664eed775457af02e44.bindTooltip(
+                `<div>
+                     Jardim — Nível 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_040324c23f73219e7d05a1cc2392b39e = L.circleMarker(
+                [-21.6989, -57.8828],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1c40f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b5f7361fc5ed4f70932b41d673cf99e1);
+        
+    
+        var popup_875ac93dfdcb2c4bab5b9ec8282fd2eb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6493538ecc5bc2609a449d7e56252d9d = $(`<div id="html_6493538ecc5bc2609a449d7e56252d9d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Porto Murtinho             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟡 Frequente (3/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-21.6989</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-57.8828</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Prioridade alta — aspecto ambiental             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_875ac93dfdcb2c4bab5b9ec8282fd2eb.setContent(html_6493538ecc5bc2609a449d7e56252d9d);
+            
+        
+
+        circle_marker_040324c23f73219e7d05a1cc2392b39e.bindPopup(popup_875ac93dfdcb2c4bab5b9ec8282fd2eb)
+        ;
+
+        
+    
+    
+            circle_marker_040324c23f73219e7d05a1cc2392b39e.bindTooltip(
+                `<div>
+                     Porto Murtinho — Nível 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c7a4bd1b58e65f9cd84bf47833b255a8 = L.circleMarker(
+                [-19.9519, -54.8906],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1c40f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b5f7361fc5ed4f70932b41d673cf99e1);
+        
+    
+        var popup_55ff10087e2847843576727e0fe27426 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0ff28083206a15ef06229690cf05a51e = $(`<div id="html_0ff28083206a15ef06229690cf05a51e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Rochedo             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟡 Frequente (3/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-19.9519</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.8906</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Prioridade alta — aspecto ambiental             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_55ff10087e2847843576727e0fe27426.setContent(html_0ff28083206a15ef06229690cf05a51e);
+            
+        
+
+        circle_marker_c7a4bd1b58e65f9cd84bf47833b255a8.bindPopup(popup_55ff10087e2847843576727e0fe27426)
+        ;
+
+        
+    
+    
+            circle_marker_c7a4bd1b58e65f9cd84bf47833b255a8.bindTooltip(
+                `<div>
+                     Rochedo — Nível 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8fbeb73db9bb9b4d84a9c6de7769864e = L.circleMarker(
+                [-20.9306, -54.9611],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1c40f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b5f7361fc5ed4f70932b41d673cf99e1);
+        
+    
+        var popup_1aafcdd80cd14cd1ab8aacbc049c2801 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cc292b48eab84ce26674aaae26963848 = $(`<div id="html_cc292b48eab84ce26674aaae26963848" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #2c3e50;">                 🐗 Sidrolândia             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟡 Frequente (3/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-20.9306</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.9611</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Grande área agrícola             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_1aafcdd80cd14cd1ab8aacbc049c2801.setContent(html_cc292b48eab84ce26674aaae26963848);
+            
+        
+
+        circle_marker_8fbeb73db9bb9b4d84a9c6de7769864e.bindPopup(popup_1aafcdd80cd14cd1ab8aacbc049c2801)
+        ;
+
+        
+    
+    
+            circle_marker_8fbeb73db9bb9b4d84a9c6de7769864e.bindTooltip(
+                `<div>
+                     Sidrolândia — Nível 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_b5f7361fc5ed4f70932b41d673cf99e1.addTo(map_5bad8dcb7a76e03c071477dcde817faa);
+        
+    
+            var feature_group_8a826c89efa975ba0c67d7b7f8f9db6e = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_4011bb98e0dbf79d312f049880d1d3f8 = L.circleMarker(
+                [-22.2211, -54.8056],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(feature_group_8a826c89efa975ba0c67d7b7f8f9db6e);
+        
+    
+        var popup_e82f6a901cf6ccb1f53dd95513b472df = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0425a786acf2edc66a1590dd604f7f7c = $(`<div id="html_0425a786acf2edc66a1590dd604f7f7c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #c0392b;">                 🐗 Dourados             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟠 Alta (4/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.2211</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.8056</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Maior nº de abates registrados no SIMAF             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_e82f6a901cf6ccb1f53dd95513b472df.setContent(html_0425a786acf2edc66a1590dd604f7f7c);
+            
+        
+
+        circle_marker_4011bb98e0dbf79d312f049880d1d3f8.bindPopup(popup_e82f6a901cf6ccb1f53dd95513b472df)
+        ;
+
+        
+    
+    
+            circle_marker_4011bb98e0dbf79d312f049880d1d3f8.bindTooltip(
+                `<div>
+                     Dourados — Nível 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_71faf0411d7ff25c3e34568cae2e15c0 = L.marker(
+                [-22.2211, -54.8056],
+                {
+}
+            ).addTo(feature_group_8a826c89efa975ba0c67d7b7f8f9db6e);
+        
+    
+            var div_icon_202de86caa99e9e6de1644908ad40bcb = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-size: 12px;\n                        font-weight: bold;\n                        color: #d35400;\n                        text-shadow: 1px 1px 2px white, -1px -1px 2px white,\n                                     1px -1px 2px white, -1px 1px 2px white;\n                        white-space: nowrap;\n                    \"\u003eDourados\u003c/div\u003e\n                    ",
+  "iconSize": [150, 20],
+  "iconAnchor": [-15, 10],
+  "className": "empty",
+});
+        
+    
+                marker_71faf0411d7ff25c3e34568cae2e15c0.setIcon(div_icon_202de86caa99e9e6de1644908ad40bcb);
+            
+    
+            var circle_marker_90bcfc038e5e7bd0a3d454444c42e685 = L.circleMarker(
+                [-21.6142, -55.1681],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(feature_group_8a826c89efa975ba0c67d7b7f8f9db6e);
+        
+    
+        var popup_41f8844ab76aa09e0a86200fbba73768 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_390b04dedb7385139e4245f9915d2aac = $(`<div id="html_390b04dedb7385139e4245f9915d2aac" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #c0392b;">                 🐗 Maracaju             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟠 Alta (4/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-21.6142</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-55.1681</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Grande área agrícola afetada — soja e milho             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_41f8844ab76aa09e0a86200fbba73768.setContent(html_390b04dedb7385139e4245f9915d2aac);
+            
+        
+
+        circle_marker_90bcfc038e5e7bd0a3d454444c42e685.bindPopup(popup_41f8844ab76aa09e0a86200fbba73768)
+        ;
+
+        
+    
+    
+            circle_marker_90bcfc038e5e7bd0a3d454444c42e685.bindTooltip(
+                `<div>
+                     Maracaju — Nível 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_84b172b4ddee7f088e0c708d0caa5272 = L.marker(
+                [-21.6142, -55.1681],
+                {
+}
+            ).addTo(feature_group_8a826c89efa975ba0c67d7b7f8f9db6e);
+        
+    
+            var div_icon_c7682184dbccd3c5be3df216d80f7dbf = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-size: 12px;\n                        font-weight: bold;\n                        color: #d35400;\n                        text-shadow: 1px 1px 2px white, -1px -1px 2px white,\n                                     1px -1px 2px white, -1px 1px 2px white;\n                        white-space: nowrap;\n                    \"\u003eMaracaju\u003c/div\u003e\n                    ",
+  "iconSize": [150, 20],
+  "iconAnchor": [-15, 10],
+  "className": "empty",
+});
+        
+    
+                marker_84b172b4ddee7f088e0c708d0caa5272.setIcon(div_icon_c7682184dbccd3c5be3df216d80f7dbf);
+            
+    
+            var circle_marker_e0575fefd79f5e76fdd585769352df88 = L.circleMarker(
+                [-21.4658, -54.3828],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(feature_group_8a826c89efa975ba0c67d7b7f8f9db6e);
+        
+    
+        var popup_cf1692d7556cf070a7b0ddd9aeae8489 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e2fc9c9747648b20dda6ee926631f1d2 = $(`<div id="html_e2fc9c9747648b20dda6ee926631f1d2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #c0392b;">                 🐗 Nova Alvorada do Sul             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟠 Alta (4/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-21.4658</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.3828</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência frequente confirmada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_cf1692d7556cf070a7b0ddd9aeae8489.setContent(html_e2fc9c9747648b20dda6ee926631f1d2);
+            
+        
+
+        circle_marker_e0575fefd79f5e76fdd585769352df88.bindPopup(popup_cf1692d7556cf070a7b0ddd9aeae8489)
+        ;
+
+        
+    
+    
+            circle_marker_e0575fefd79f5e76fdd585769352df88.bindTooltip(
+                `<div>
+                     Nova Alvorada do Sul — Nível 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d66b0d5dc05a4d036d28bb7dd38c8cd1 = L.marker(
+                [-21.4658, -54.3828],
+                {
+}
+            ).addTo(feature_group_8a826c89efa975ba0c67d7b7f8f9db6e);
+        
+    
+            var div_icon_251518e53606b52760381b968a957047 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-size: 12px;\n                        font-weight: bold;\n                        color: #d35400;\n                        text-shadow: 1px 1px 2px white, -1px -1px 2px white,\n                                     1px -1px 2px white, -1px 1px 2px white;\n                        white-space: nowrap;\n                    \"\u003eNova Alvorada do Sul\u003c/div\u003e\n                    ",
+  "iconSize": [150, 20],
+  "iconAnchor": [-15, 10],
+  "className": "empty",
+});
+        
+    
+                marker_d66b0d5dc05a4d036d28bb7dd38c8cd1.setIcon(div_icon_251518e53606b52760381b968a957047);
+            
+    
+            var circle_marker_9591cab630f880a9ab7117329e4cc545 = L.circleMarker(
+                [-22.0797, -54.7886],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(feature_group_8a826c89efa975ba0c67d7b7f8f9db6e);
+        
+    
+        var popup_a610e5ee7ff67f57e559dfddad433b49 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e8a6c6a78cb09659cc53abe6201667bd = $(`<div id="html_e8a6c6a78cb09659cc53abe6201667bd" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #c0392b;">                 🐗 Itaporã             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟠 Alta (4/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.0797</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.7886</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Região agrícola fortemente afetada             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_a610e5ee7ff67f57e559dfddad433b49.setContent(html_e8a6c6a78cb09659cc53abe6201667bd);
+            
+        
+
+        circle_marker_9591cab630f880a9ab7117329e4cc545.bindPopup(popup_a610e5ee7ff67f57e559dfddad433b49)
+        ;
+
+        
+    
+    
+            circle_marker_9591cab630f880a9ab7117329e4cc545.bindTooltip(
+                `<div>
+                     Itaporã — Nível 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_873547c429731596330af6b250827604 = L.marker(
+                [-22.0797, -54.7886],
+                {
+}
+            ).addTo(feature_group_8a826c89efa975ba0c67d7b7f8f9db6e);
+        
+    
+            var div_icon_522724f64cf7acb0d267d34d84f1b4af = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-size: 12px;\n                        font-weight: bold;\n                        color: #d35400;\n                        text-shadow: 1px 1px 2px white, -1px -1px 2px white,\n                                     1px -1px 2px white, -1px 1px 2px white;\n                        white-space: nowrap;\n                    \"\u003eItapor\u00e3\u003c/div\u003e\n                    ",
+  "iconSize": [150, 20],
+  "iconAnchor": [-15, 10],
+  "className": "empty",
+});
+        
+    
+                marker_873547c429731596330af6b250827604.setIcon(div_icon_522724f64cf7acb0d267d34d84f1b4af);
+            
+    
+            var circle_marker_76b58eacbf93b7a008ba6a30c9e9d1f1 = L.circleMarker(
+                [-22.6364, -54.8206],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(feature_group_8a826c89efa975ba0c67d7b7f8f9db6e);
+        
+    
+        var popup_421a9e3da60a80b1f1f3e2d721348e00 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_99c3c988094e7318382baab81eb1ce80 = $(`<div id="html_99c3c988094e7318382baab81eb1ce80" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #c0392b;">                 🐗 Caarapó             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟠 Alta (4/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.6364</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.8206</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Ocorrência frequente — lavouras de milho e soja             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_421a9e3da60a80b1f1f3e2d721348e00.setContent(html_99c3c988094e7318382baab81eb1ce80);
+            
+        
+
+        circle_marker_76b58eacbf93b7a008ba6a30c9e9d1f1.bindPopup(popup_421a9e3da60a80b1f1f3e2d721348e00)
+        ;
+
+        
+    
+    
+            circle_marker_76b58eacbf93b7a008ba6a30c9e9d1f1.bindTooltip(
+                `<div>
+                     Caarapó — Nível 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_71d01383796aa08235677c386ad6a07e = L.marker(
+                [-22.6364, -54.8206],
+                {
+}
+            ).addTo(feature_group_8a826c89efa975ba0c67d7b7f8f9db6e);
+        
+    
+            var div_icon_3e9fbeccbaa432d1e5fbdeea3344176b = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-size: 12px;\n                        font-weight: bold;\n                        color: #d35400;\n                        text-shadow: 1px 1px 2px white, -1px -1px 2px white,\n                                     1px -1px 2px white, -1px 1px 2px white;\n                        white-space: nowrap;\n                    \"\u003eCaarap\u00f3\u003c/div\u003e\n                    ",
+  "iconSize": [150, 20],
+  "iconAnchor": [-15, 10],
+  "className": "empty",
+});
+        
+    
+                marker_71d01383796aa08235677c386ad6a07e.setIcon(div_icon_3e9fbeccbaa432d1e5fbdeea3344176b);
+            
+    
+            var circle_marker_8f1788bbf62b1f76da7d70a92e4a23db = L.circleMarker(
+                [-22.5358, -55.7256],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 1}
+            ).addTo(feature_group_8a826c89efa975ba0c67d7b7f8f9db6e);
+        
+    
+        var popup_b51fe9bab16b7a653217de560c3df384 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ee4b32b41db68825afe335bc12883ea8 = $(`<div id="html_ee4b32b41db68825afe335bc12883ea8" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #c0392b;">                 🐗 Ponta Porã             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🟠 Alta (4/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.5358</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-55.7256</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Fronteira — rota original de entrada dos javalis (anos 1990)             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_b51fe9bab16b7a653217de560c3df384.setContent(html_ee4b32b41db68825afe335bc12883ea8);
+            
+        
+
+        circle_marker_8f1788bbf62b1f76da7d70a92e4a23db.bindPopup(popup_b51fe9bab16b7a653217de560c3df384)
+        ;
+
+        
+    
+    
+            circle_marker_8f1788bbf62b1f76da7d70a92e4a23db.bindTooltip(
+                `<div>
+                     Ponta Porã — Nível 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5f4e721fd8eef5ad4fa1eaaabe7dea25 = L.marker(
+                [-22.5358, -55.7256],
+                {
+}
+            ).addTo(feature_group_8a826c89efa975ba0c67d7b7f8f9db6e);
+        
+    
+            var div_icon_1b62cfcc4778c79dee541c2994bd5a1b = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-size: 12px;\n                        font-weight: bold;\n                        color: #d35400;\n                        text-shadow: 1px 1px 2px white, -1px -1px 2px white,\n                                     1px -1px 2px white, -1px 1px 2px white;\n                        white-space: nowrap;\n                    \"\u003ePonta Por\u00e3\u003c/div\u003e\n                    ",
+  "iconSize": [150, 20],
+  "iconAnchor": [-15, 10],
+  "className": "empty",
+});
+        
+    
+                marker_5f4e721fd8eef5ad4fa1eaaabe7dea25.setIcon(div_icon_1b62cfcc4778c79dee541c2994bd5a1b);
+            
+    
+            feature_group_8a826c89efa975ba0c67d7b7f8f9db6e.addTo(map_5bad8dcb7a76e03c071477dcde817faa);
+        
+    
+            var feature_group_9a09fcda0778e1a09349b3782a1e3991 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_964d695d5cd3445a3808155154d38282 = L.circleMarker(
+                [-21.8025, -54.5461],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21, "stroke": true, "weight": 1}
+            ).addTo(feature_group_9a09fcda0778e1a09349b3782a1e3991);
+        
+    
+        var popup_c0ebc09a6e1052f0256fc6d77cc2e0cc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_229ec0f8150d92987c29a95b78177bfb = $(`<div id="html_229ec0f8150d92987c29a95b78177bfb" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #c0392b;">                 🐗 Rio Brilhante             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🔴 Extremamente Alta (5/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-21.8025</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.5461</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Epicentro — maior nº de ataques, >1000 animais, R$1.5M prejuízo em milho             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_c0ebc09a6e1052f0256fc6d77cc2e0cc.setContent(html_229ec0f8150d92987c29a95b78177bfb);
+            
+        
+
+        circle_marker_964d695d5cd3445a3808155154d38282.bindPopup(popup_c0ebc09a6e1052f0256fc6d77cc2e0cc)
+        ;
+
+        
+    
+    
+            circle_marker_964d695d5cd3445a3808155154d38282.bindTooltip(
+                `<div>
+                     Rio Brilhante — Nível 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_290516ae40c52f058a6d11c710e77278 = L.marker(
+                [-21.8025, -54.5461],
+                {
+}
+            ).addTo(feature_group_9a09fcda0778e1a09349b3782a1e3991);
+        
+    
+            var div_icon_020844214acd3342e40991f061469bfd = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-size: 14px;\n                        font-weight: bold;\n                        color: #c0392b;\n                        text-shadow: 1px 1px 2px white, -1px -1px 2px white,\n                                     1px -1px 2px white, -1px 1px 2px white;\n                        white-space: nowrap;\n                    \"\u003eRio Brilhante\u003c/div\u003e\n                    ",
+  "iconSize": [150, 20],
+  "iconAnchor": [-15, 10],
+  "className": "empty",
+});
+        
+    
+                marker_290516ae40c52f058a6d11c710e77278.setIcon(div_icon_020844214acd3342e40991f061469bfd);
+            
+    
+            var circle_marker_eb436c56b5f03a93802c44e9cfd383c3 = L.circleMarker(
+                [-22.0411, -54.6156],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21, "stroke": true, "weight": 1}
+            ).addTo(feature_group_9a09fcda0778e1a09349b3782a1e3991);
+        
+    
+        var popup_7b36e09e4a0e2a7648b642a3ee0ae9b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9cac0db7892275eff42fa783fd909e56 = $(`<div id="html_9cac0db7892275eff42fa783fd909e56" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #c0392b;">                 🐗 Douradina             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🔴 Extremamente Alta (5/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.0411</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.6156</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Prioridade extremamente alta — Plano Javali IBAMA             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_7b36e09e4a0e2a7648b642a3ee0ae9b1.setContent(html_9cac0db7892275eff42fa783fd909e56);
+            
+        
+
+        circle_marker_eb436c56b5f03a93802c44e9cfd383c3.bindPopup(popup_7b36e09e4a0e2a7648b642a3ee0ae9b1)
+        ;
+
+        
+    
+    
+            circle_marker_eb436c56b5f03a93802c44e9cfd383c3.bindTooltip(
+                `<div>
+                     Douradina — Nível 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_06292130e9add8ec40fda214c705fd42 = L.marker(
+                [-22.0411, -54.6156],
+                {
+}
+            ).addTo(feature_group_9a09fcda0778e1a09349b3782a1e3991);
+        
+    
+            var div_icon_bf7637927399a32eac97de533a85644d = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-size: 14px;\n                        font-weight: bold;\n                        color: #c0392b;\n                        text-shadow: 1px 1px 2px white, -1px -1px 2px white,\n                                     1px -1px 2px white, -1px 1px 2px white;\n                        white-space: nowrap;\n                    \"\u003eDouradina\u003c/div\u003e\n                    ",
+  "iconSize": [150, 20],
+  "iconAnchor": [-15, 10],
+  "className": "empty",
+});
+        
+    
+                marker_06292130e9add8ec40fda214c705fd42.setIcon(div_icon_bf7637927399a32eac97de533a85644d);
+            
+    
+            var circle_marker_815b15b5c424a8042fd1ea122f404b03 = L.circleMarker(
+                [-22.3789, -54.5131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21, "stroke": true, "weight": 1}
+            ).addTo(feature_group_9a09fcda0778e1a09349b3782a1e3991);
+        
+    
+        var popup_c171692c3d86cd206709918926cf84e3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6a8537b573522981161d6f8c08212d3a = $(`<div id="html_6a8537b573522981161d6f8c08212d3a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #c0392b;">                 🐗 Fátima do Sul             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🔴 Extremamente Alta (5/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.3789</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-54.5131</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Prioridade extremamente alta — Plano Javali IBAMA             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_c171692c3d86cd206709918926cf84e3.setContent(html_6a8537b573522981161d6f8c08212d3a);
+            
+        
+
+        circle_marker_815b15b5c424a8042fd1ea122f404b03.bindPopup(popup_c171692c3d86cd206709918926cf84e3)
+        ;
+
+        
+    
+    
+            circle_marker_815b15b5c424a8042fd1ea122f404b03.bindTooltip(
+                `<div>
+                     Fátima do Sul — Nível 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0f086ad1b364816d6cf43fba4edac20a = L.marker(
+                [-22.3789, -54.5131],
+                {
+}
+            ).addTo(feature_group_9a09fcda0778e1a09349b3782a1e3991);
+        
+    
+            var div_icon_a145e0d15637d48986296124ef102c31 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-size: 14px;\n                        font-weight: bold;\n                        color: #c0392b;\n                        text-shadow: 1px 1px 2px white, -1px -1px 2px white,\n                                     1px -1px 2px white, -1px 1px 2px white;\n                        white-space: nowrap;\n                    \"\u003eF\u00e1tima do Sul\u003c/div\u003e\n                    ",
+  "iconSize": [150, 20],
+  "iconAnchor": [-15, 10],
+  "className": "empty",
+});
+        
+    
+                marker_0f086ad1b364816d6cf43fba4edac20a.setIcon(div_icon_a145e0d15637d48986296124ef102c31);
+            
+    
+            var circle_marker_a503ae20c90c6fc45c82a6c5a5870409 = L.circleMarker(
+                [-22.5444, -55.1483],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21, "stroke": true, "weight": 1}
+            ).addTo(feature_group_9a09fcda0778e1a09349b3782a1e3991);
+        
+    
+        var popup_6e791a12ab505c363dc0cfd8b76a2a16 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e0d14a12de5b5a81994cdc561303e258 = $(`<div id="html_e0d14a12de5b5a81994cdc561303e258" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial, sans-serif; width: 280px;">             <h3 style="margin:0; color: #c0392b;">                 🐗 Laguna Carapã             </h3>             <hr style="margin: 5px 0;">             <table style="font-size: 13px; width: 100%;">                 <tr>                     <td><b>Nível:</b></td>                     <td>🔴 Extremamente Alta (5/5)</td>                 </tr>                 <tr>                     <td><b>Latitude:</b></td>                     <td>-22.5444</td>                 </tr>                 <tr>                     <td><b>Longitude:</b></td>                     <td>-55.1483</td>                 </tr>             </table>             <p style="font-size: 12px; color: #555; margin-top: 8px;">                 📋 Prioridade extremamente alta — múltiplos aspectos (ambiental + socioeconômico)             </p>             <p style="font-size: 10px; color: #999; margin-top: 5px;">                 Fontes: IBAMA/SIMAF · Embrapa · UFMS · FAMASUL             </p>         </div>         </div>`)[0];
+                popup_6e791a12ab505c363dc0cfd8b76a2a16.setContent(html_e0d14a12de5b5a81994cdc561303e258);
+            
+        
+
+        circle_marker_a503ae20c90c6fc45c82a6c5a5870409.bindPopup(popup_6e791a12ab505c363dc0cfd8b76a2a16)
+        ;
+
+        
+    
+    
+            circle_marker_a503ae20c90c6fc45c82a6c5a5870409.bindTooltip(
+                `<div>
+                     Laguna Carapã — Nível 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c2201f24121b332dce3591fac89504e3 = L.marker(
+                [-22.5444, -55.1483],
+                {
+}
+            ).addTo(feature_group_9a09fcda0778e1a09349b3782a1e3991);
+        
+    
+            var div_icon_8cae520bed3285f0a91824141aa21818 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"\n                        font-size: 14px;\n                        font-weight: bold;\n                        color: #c0392b;\n                        text-shadow: 1px 1px 2px white, -1px -1px 2px white,\n                                     1px -1px 2px white, -1px 1px 2px white;\n                        white-space: nowrap;\n                    \"\u003eLaguna Carap\u00e3\u003c/div\u003e\n                    ",
+  "iconSize": [150, 20],
+  "iconAnchor": [-15, 10],
+  "className": "empty",
+});
+        
+    
+                marker_c2201f24121b332dce3591fac89504e3.setIcon(div_icon_8cae520bed3285f0a91824141aa21818);
+            
+    
+            feature_group_9a09fcda0778e1a09349b3782a1e3991.addTo(map_5bad8dcb7a76e03c071477dcde817faa);
+        
+    
+            var feature_group_13b8bf66557547a12aa71f5a6d5dbb63 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var heat_map_9fb935a901bab7d6cc38ffb26e16c04c = L.heatLayer(
+                [[-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-21.8025, -54.5461, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.0411, -54.6156, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.3789, -54.5131, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.5444, -55.1483, 5], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-22.2211, -54.8056, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.6142, -55.1681, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-21.4658, -54.3828, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.0797, -54.7886, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.6364, -54.8206, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.5358, -55.7256, 4], [-22.1069, -56.5214, 3], [-22.1069, -56.5214, 3], [-22.1069, -56.5214, 3], [-22.1069, -56.5214, 3], [-22.1069, -56.5214, 3], [-22.1069, -56.5214, 3], [-22.1069, -56.5214, 3], [-22.1069, -56.5214, 3], [-22.1069, -56.5214, 3], [-22.9367, -55.6383, 3], [-22.9367, -55.6383, 3], [-22.9367, -55.6383, 3], [-22.9367, -55.6383, 3], [-22.9367, -55.6383, 3], [-22.9367, -55.6383, 3], [-22.9367, -55.6383, 3], [-22.9367, -55.6383, 3], [-22.9367, -55.6383, 3], [-23.105, -55.2256, 3], [-23.105, -55.2256, 3], [-23.105, -55.2256, 3], [-23.105, -55.2256, 3], [-23.105, -55.2256, 3], [-23.105, -55.2256, 3], [-23.105, -55.2256, 3], [-23.105, -55.2256, 3], [-23.105, -55.2256, 3], [-22.1914, -55.9531, 3], [-22.1914, -55.9531, 3], [-22.1914, -55.9531, 3], [-22.1914, -55.9531, 3], [-22.1914, -55.9531, 3], [-22.1914, -55.9531, 3], [-22.1914, -55.9531, 3], [-22.1914, -55.9531, 3], [-22.1914, -55.9531, 3], [-23.0631, -54.1908, 3], [-23.0631, -54.1908, 3], [-23.0631, -54.1908, 3], [-23.0631, -54.1908, 3], [-23.0631, -54.1908, 3], [-23.0631, -54.1908, 3], [-23.0631, -54.1908, 3], [-23.0631, -54.1908, 3], [-23.0631, -54.1908, 3], [-22.3089, -53.8167, 3], [-22.3089, -53.8167, 3], [-22.3089, -53.8167, 3], [-22.3089, -53.8167, 3], [-22.3089, -53.8167, 3], [-22.3089, -53.8167, 3], [-22.3089, -53.8167, 3], [-22.3089, -53.8167, 3], [-22.3089, -53.8167, 3], [-21.1267, -56.4836, 3], [-21.1267, -56.4836, 3], [-21.1267, -56.4836, 3], [-21.1267, -56.4836, 3], [-21.1267, -56.4836, 3], [-21.1267, -56.4836, 3], [-21.1267, -56.4836, 3], [-21.1267, -56.4836, 3], [-21.1267, -56.4836, 3], [-23.2722, -55.5264, 3], [-23.2722, -55.5264, 3], [-23.2722, -55.5264, 3], [-23.2722, -55.5264, 3], [-23.2722, -55.5264, 3], [-23.2722, -55.5264, 3], [-23.2722, -55.5264, 3], [-23.2722, -55.5264, 3], [-23.2722, -55.5264, 3], [-21.4797, -56.1383, 3], [-21.4797, -56.1383, 3], [-21.4797, -56.1383, 3], [-21.4797, -56.1383, 3], [-21.4797, -56.1383, 3], [-21.4797, -56.1383, 3], [-21.4797, -56.1383, 3], [-21.4797, -56.1383, 3], [-21.4797, -56.1383, 3], [-21.6989, -57.8828, 3], [-21.6989, -57.8828, 3], [-21.6989, -57.8828, 3], [-21.6989, -57.8828, 3], [-21.6989, -57.8828, 3], [-21.6989, -57.8828, 3], [-21.6989, -57.8828, 3], [-21.6989, -57.8828, 3], [-21.6989, -57.8828, 3], [-19.9519, -54.8906, 3], [-19.9519, -54.8906, 3], [-19.9519, -54.8906, 3], [-19.9519, -54.8906, 3], [-19.9519, -54.8906, 3], [-19.9519, -54.8906, 3], [-19.9519, -54.8906, 3], [-19.9519, -54.8906, 3], [-19.9519, -54.8906, 3], [-20.9306, -54.9611, 3], [-20.9306, -54.9611, 3], [-20.9306, -54.9611, 3], [-20.9306, -54.9611, 3], [-20.9306, -54.9611, 3], [-20.9306, -54.9611, 3], [-20.9306, -54.9611, 3], [-20.9306, -54.9611, 3], [-20.9306, -54.9611, 3], [-22.1531, -53.7711, 2], [-22.1531, -53.7711, 2], [-22.1531, -53.7711, 2], [-22.1531, -53.7711, 2], [-22.1856, -52.7189, 2], [-22.1856, -52.7189, 2], [-22.1856, -52.7189, 2], [-22.1856, -52.7189, 2], [-20.4714, -55.7867, 2], [-20.4714, -55.7867, 2], [-20.4714, -55.7867, 2], [-20.4714, -55.7867, 2], [-22.2944, -53.2706, 2], [-22.2944, -53.2706, 2], [-22.2944, -53.2706, 2], [-22.2944, -53.2706, 2], [-20.5381, -56.7147, 2], [-20.5381, -56.7147, 2], [-20.5381, -56.7147, 2], [-20.5381, -56.7147, 2], [-22.0111, -57.0272, 2], [-22.0111, -57.0272, 2], [-22.0111, -57.0272, 2], [-22.0111, -57.0272, 2], [-19.0092, -57.6514, 2], [-19.0092, -57.6514, 2], [-19.0092, -57.6514, 2], [-19.0092, -57.6514, 2], [-18.5069, -54.76, 2], [-18.5069, -54.76, 2], [-18.5069, -54.76, 2], [-18.5069, -54.76, 2], [-22.2767, -54.1681, 2], [-22.2767, -54.1681, 2], [-22.2767, -54.1681, 2], [-22.2767, -54.1681, 2], [-22.4133, -54.2328, 2], [-22.4133, -54.2328, 2], [-22.4133, -54.2328, 2], [-22.4133, -54.2328, 2], [-21.4583, -56.1117, 2], [-21.4583, -56.1117, 2], [-21.4583, -56.1117, 2], [-21.4583, -56.1117, 2], [-23.4767, -54.1875, 2], [-23.4767, -54.1875, 2], [-23.4767, -54.1875, 2], [-23.4767, -54.1875, 2], [-22.4803, -54.3078, 2], [-22.4803, -54.3078, 2], [-22.4803, -54.3078, 2], [-22.4803, -54.3078, 2], [-22.86, -54.6064, 2], [-22.86, -54.6064, 2], [-22.86, -54.6064, 2], [-22.86, -54.6064, 2], [-20.2406, -56.3778, 2], [-20.2406, -56.3778, 2], [-20.2406, -56.3778, 2], [-20.2406, -56.3778, 2], [-22.2328, -53.3433, 2], [-22.2328, -53.3433, 2], [-22.2328, -53.3433, 2], [-22.2328, -53.3433, 2], [-20.4697, -54.6201, 1], [-20.7511, -51.6783, 1], [-23.9356, -54.2808, 1], [-23.7867, -54.2836, 1]],
+                {
+  "minOpacity": 0.3,
+  "maxZoom": 10,
+  "radius": 35,
+  "blur": 25,
+  "gradient": {
+  0.2: "#3498db",
+  0.4: "#2ecc71",
+  0.6: "#f1c40f",
+  0.8: "#e67e22",
+  1.0: "#e74c3c",
+},
+}
+            );
+        
+    
+            heat_map_9fb935a901bab7d6cc38ffb26e16c04c.addTo(feature_group_13b8bf66557547a12aa71f5a6d5dbb63);
+        
+    
+            feature_group_13b8bf66557547a12aa71f5a6d5dbb63.addTo(map_5bad8dcb7a76e03c071477dcde817faa);
+        
+    
+            var layer_control_c28ff5301b98863dab57cfb324914a20_layers = {
+                base_layers : {
+                    "\ud83d\uddfa\ufe0f Mapa Ruas" : tile_layer_c254d3fc3f1e8f9c28cd4ad47d2eeec9,
+                    "\ud83d\udef0\ufe0f Sat\u00e9lite" : tile_layer_bcc24d812d499d9c88b32ba33897937e,
+                    "\ud83c\udfd4\ufe0f Topogr\u00e1fico" : tile_layer_16cfa6ba220e4282f259a9fcd75df018,
+                },
+                overlays :  {
+                    "\ud83d\udd35 Espor\u00e1dica" : feature_group_7ff133f1142975d69450f206f2771ee5,
+                    "\ud83d\udfe2 Confirmada" : feature_group_a55526745535e4e83919c243858e3f5d,
+                    "\ud83d\udfe1 Frequente" : feature_group_b5f7361fc5ed4f70932b41d673cf99e1,
+                    "\ud83d\udfe0 Alta" : feature_group_8a826c89efa975ba0c67d7b7f8f9db6e,
+                    "\ud83d\udd34 Extremamente Alta" : feature_group_9a09fcda0778e1a09349b3782a1e3991,
+                    "\ud83d\udd25 Mapa de Calor" : feature_group_13b8bf66557547a12aa71f5a6d5dbb63,
+                },
+            };
+            let layer_control_c28ff5301b98863dab57cfb324914a20 = L.control.layers(
+                layer_control_c28ff5301b98863dab57cfb324914a20_layers.base_layers,
+                layer_control_c28ff5301b98863dab57cfb324914a20_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_5bad8dcb7a76e03c071477dcde817faa);
+
+        
+</script>
+</html>

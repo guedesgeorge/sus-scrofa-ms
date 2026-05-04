@@ -1,0 +1,7 @@
+geopandas>=0.14
+matplotlib>=3.7
+mapclassify>=2.5
+pandas>=2.0
+shapely>=2.0
+geobr>=0.3
+scipy>=1.11
