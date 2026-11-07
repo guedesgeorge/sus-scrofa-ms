@@ -8,6 +8,7 @@
 [![YOLO](https://img.shields.io/badge/YOLOv8-Ultralytics-00FFFF?style=for-the-badge&logo=yolo&logoColor=white)](https://ultralytics.com)
 [![License](https://img.shields.io/badge/Licença-MIT-green?style=for-the-badge)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow?style=for-the-badge)]()
+[![Hugging Face](https://img.shields.io/badge/🤗_Modelo-Hugging_Face-FFD21E?style=for-the-badge)](https://huggingface.co/Georgeemannuel007/javali-detech-yolov8s)
 
 <br>
 
@@ -118,11 +119,32 @@ start dashboard/dashboard_javali_confirmado.html       # Windows
 
 ---
 
-## 🤖 Módulo 2 — Detecção por Visão Computacional (Em Desenvolvimento)
+## 🤖 Módulo 2 — Detecção por Visão Computacional
 
-### Classes de Detecção
+### ✅ Modelo publicado: Javali Detech YOLOv8s
 
-O modelo YOLO será treinado para detectar:
+Detector de classe única (`Javali`) treinado com validação cruzada de 5 folds e comparado com DETR e Faster R-CNN nos mesmos folds.
+
+🤗 **Pesos e model card:** [huggingface.co/Georgeemannuel007/javali-detech-yolov8s](https://huggingface.co/Georgeemannuel007/javali-detech-yolov8s)
+
+| Modelo | mAP@50-95 | mAP@50 | Precisão | Revocação | F1 | r contagem |
+|---|---|---|---|---|---|---|
+| **YOLOv8s (publicado)** | 0.396 ± 0.035 | 0.579 ± 0.048 | 0.794 ± 0.041 | 0.726 ± 0.035 | 0.758 ± 0.032 | **0.942** ± 0.009 |
+| DETR | **0.405** ± 0.054 | **0.641** ± 0.043 | **0.800** ± 0.026 | **0.765** ± 0.044 | **0.782** ± 0.025 | 0.926 ± 0.020 |
+| Faster R-CNN | 0.152 ± 0.029 | 0.413 ± 0.039 | 0.160 ± 0.046 | 0.772 ± 0.052 | 0.262 ± 0.064 | 0.797 ± 0.072 |
+
+*Média ± desvio padrão no conjunto de teste dos 5 folds (252 imagens, 481 animais anotados).* O YOLOv8s empata com o DETR sendo ~7× menor (22 MB contra 166 MB), por isso foi o escolhido para publicação.
+
+```bash
+pip install ultralytics huggingface_hub
+python deteccao-yolo/predict.py sua_foto.jpg
+```
+
+Detalhes, métricas por fold e limitações em [`deteccao-yolo/`](deteccao-yolo/).
+
+### Próximas classes de detecção
+
+O plano de expansão do modelo inclui:
 
 | Classe | Descrição | Aplicação |
 |--------|-----------|-----------|
@@ -213,7 +235,8 @@ shapely >= 2.0
 folium >= 0.15
 geobr >= 0.3
 scipy >= 1.11
-ultralytics >= 8.0    # para o módulo YOLO (futuro)
+ultralytics >= 8.2    # módulo de detecção YOLO
+huggingface_hub       # download dos pesos do modelo
 ```
 
 ---
@@ -222,7 +245,7 @@ ultralytics >= 8.0    # para o módulo YOLO (futuro)
 
 | Nome | Função | Contato |
 |------|--------|---------|
-| **George Emanuel Guedes de Carvalho** | Pesquisador principal | ra196379@ucdb.br |
+| **George Emannuel Guedes de Carvalho** | Pesquisador principal | ra196379@ucdb.br |
 | **Prof. Alan Rios Bezerra** | Orientador | UCDB |
 
 **Laboratório Inovisão** — Escola de Computação, Universidade Católica Dom Bosco (UCDB)
@@ -259,7 +282,9 @@ Se você é **caçador/controlador**, **produtor rural** ou **pesquisador** e po
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+O código deste repositório está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+Os pesos do modelo de detecção, publicados no Hugging Face, seguem a licença AGPL-3.0, herdada do Ultralytics YOLOv8.
 
 ---
 
