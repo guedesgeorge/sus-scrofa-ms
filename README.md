@@ -7,6 +7,7 @@
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![GeoPandas](https://img.shields.io/badge/GeoPandas-mapas-139C5A?style=for-the-badge)](https://geopandas.org)
 [![Folium](https://img.shields.io/badge/Folium-mapa_interativo-77B829?style=for-the-badge)](https://python-visualization.github.io/folium/)
+[![Hugging Face](https://img.shields.io/badge/🤗_Mapa_online-Hugging_Face-FFD21E?style=for-the-badge)](https://huggingface.co/spaces/Georgeemannuel007/javali-ms-mapa)
 
 <br>
 
@@ -86,7 +87,9 @@ python javali_mapa_calor_ms.py
 jupyter notebook Untitled-1.ipynb
 ```
 
-Os arquivos são salvos em `saida_javali/`. Para ver o mapa interativo sem rodar nada, abra `saida_javali/mapa_interativo_javali_ms.html` no navegador.
+Os arquivos são salvos em `saida_javali/`.
+
+🗺️ **Mapa interativo online:** [huggingface.co/spaces/Georgeemannuel007/javali-ms-mapa](https://huggingface.co/spaces/Georgeemannuel007/javali-ms-mapa), sem precisar rodar nada.
 
 ---
 
